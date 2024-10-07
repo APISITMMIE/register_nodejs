@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--ส่งค่าใน checkbox แสดงหน้า html-->
+    <h2>user interest</h2>
+   <div id="content">
+
+   </div>
+        <input type="checkbox" name="interest" value="sport">sport
+        <input type="checkbox" name="interest" value="game">game
+        <input type="checkbox" name="interest" value="video">video
+        <input type="checkbox" name="interest" value="book">book
+        <button onclick="submit()">My interest</button>
+    <script>
+        function submit() {
+            let interestDOM = document.querySelectorAll('input[name=interest]')
+            let contentHTML = '<ul>'
+            for(let i =0; i<interestDOM.length;i++) {
+                if (interestDOM[i].checked) {
+                    contentHTML += '<ul>' + interestDOM[i].value + '</ul>'
+                }
+            }
+            contentHTML += '</ul>'
+
+            let contentDOM = document.getElementById('content')
+            contentDOM.innerHTML = contentHTML
+        }
+    </script>
+</body>
+</html>
